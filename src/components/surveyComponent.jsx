@@ -6,12 +6,15 @@ import { themeJson } from "./theme";
 import "../index.css";
 import { json } from "./survey";
 
-function SurveyComponent() {
+function SurveyComponent( {onComplete} ) {
     const survey = new Model(json);
     survey.applyTheme(themeJson);
+
     survey.onComplete.add((sender, options) => {
-        console.log(JSON.stringify(sender.data, null, 3));
+        // console.log(JSON.stringify(sender.data, null, 3));
+        onComplete(sender.data);
     });
+
     return (<Survey model={survey} />);
 }
 
