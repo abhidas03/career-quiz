@@ -18,7 +18,7 @@ function App() {
       <body>
         <div className="App-body">
         <div className="survey">
-          <SurveyComponent onComplete={handleSurveyComplete}/>
+          {surveyData === null && <SurveyComponent onComplete={handleSurveyComplete}/>}
         </div>
         <div className = "results">
           <Results 

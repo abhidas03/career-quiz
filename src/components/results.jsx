@@ -7,9 +7,15 @@ export default function Results(data) {
 
     const dataToResults = (data) => {
         const careerScores = {
-            Soulmender: 0,
+            Pathfinder: 0,
             Artisan: 0,
-            Pathfinder: 0
+            Loreweaver: 0,
+            Firestarter: 0,
+            Visionweaver: 0,
+            Truthseeker: 0,
+            Bridgekeeper: 0,
+            Soulmender: 0,
+            Blacksmith: 0
         }
     
         const questionsToCategory = {
@@ -21,13 +27,26 @@ export default function Results(data) {
         for (let question in data) {
             careerScores[questionsToCategory[question]] += data[question]
         }
-        console.log(careerScores);
-
-        console.log(Object.values)
+        return careerScores;
     }
-    dataToResults(data.data);
+
+    const convertResults = (careerScores) => {
+        let highestCategory = 'Artisan';
+        for (let category in careerScores) {
+            if (careerScores[category] > careerScores[highestCategory]) {
+                highestCategory = category;
+            }
+        }
+
+        console.log(highestCategory)
+        return highestCategory;
+    }
+
+    const scores = dataToResults(data.data);
+    const result = convertResults(scores);
+
 
     return (
-        <div> {JSON.stringify(data)} </div>
+        <div> {result} </div>
     )
 }
