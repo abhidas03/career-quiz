@@ -21,7 +21,22 @@ export default function Results(data) {
         const questionsToCategory = {
             question1: 'Artisan',
             question2: 'Soulmender',
-            question3: 'Pathfinder'
+            question3: 'Pathfinder',
+            question4: 'Firestarter',
+            question5: 'Bridgekeeper',
+            question6: 'Artisan',
+            question7: 'Soulmender',
+            question8: 'Loreweaver',
+            question9: 'Truthseeker',
+            question10: 'Visionweaver',
+            question11: 'Blacksmith',
+            question12: 'Bridgekeeper',
+            question13: 'Firestarter',
+            question14: 'Pathfinder',
+            question15: 'Loreweaver',
+            question16: 'Truthseeker',
+            question17: 'Blacksmith',
+            question18: 'Visionweaver',
         }
 
         for (let question in data) {
