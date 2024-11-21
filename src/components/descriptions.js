@@ -1,0 +1,13 @@
+export const descriptionsJson = {
+    "descriptions":  {
+        "Pathfinder": "The Pathfinder is energized by an innate curiosity and a thirst for exploration, thriving on new experiences and uncharted territories. They excel in dynamic and ever-changing environments, where adaptability and discovery are essential. Careers in fields like research, travel, entrepreneurship, or innovation often align with their adventurous spirit. Pathfinders are energized by seeking answers, pushing boundaries, and pursuing growth, both for themselves and others. They flourish in roles that allow them to explore possibilities, embrace novelty, and challenge conventional ways of thinking.",
+        "Artisan": "The Artisan is a creator at heart, drawn to crafting, building, or shaping things with care and precision. They find joy in hands-on work and take pride in producing tangible, high-quality outcomes. Careers in design, engineering, fine arts, woodworking, culinary arts, or any field requiring detailed craftsmanship are well-suited for Artisans. They thrive in environments where creativity meets practicality, allowing them to immerse themselves in their work and focus on perfecting their craft. Artisans value the satisfaction of seeing their efforts come to life.",
+        Loreweaver: "The Loreweaver is a master storyteller, connecting people and ideas through the power of narrative. They excel at capturing attention, conveying emotion, and inspiring others with their words or creations. Careers in writing, filmmaking, public speaking, marketing, or content creation align with their strengths, as these roles let them share compelling stories that resonate deeply. Loreweavers thrive in environments where creativity and communication are valued, using their talent to inform, persuade, and entertain. Their ability to weave meaning into their work makes them impactful and memorable.",
+        Firestarter: 0,
+        Visionweaver: 0,
+        Truthseeker: 0,
+        Bridgekeeper: 0,
+        "Soulmender": "The Soulmender is deeply attuned to the emotions and well-being of others, finding purpose in fostering understanding, healing, and connection. People with this archetype are natural caregivers, excelling in roles that require empathy, active listening, and nurturing relationships. Careers in counseling, social work, healthcare, education, or community outreach often resonate with Soulmenders, as these paths allow them to make meaningful differences in people's lives. They thrive in environments where compassion is valued and where their efforts contribute to the personal growth or emotional health of others.",
+        Blacksmith: 0
+    }
+}
