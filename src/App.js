@@ -12,23 +12,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
       <body>
         <div className="App-body">
-        <div className="survey">
-          {surveyData === null && <SurveyComponent onComplete={handleSurveyComplete}/>}
-          {/* <SurveyComponent onComplete={handleSurveyComplete}/> */}
-          {/* <SurveyComponent /> */}
+          <div className="survey">
+            {surveyData === null && <SurveyComponent onComplete={handleSurveyComplete}/>}
+          </div>
+          <div className = "results">
+            <Results 
+              data = {surveyData}
+            />
+          </div>
         </div>
-        <div className = "results">
-          <Results 
-            data = {surveyData}
-          />
-        </div>
-        </div>
-          
       </body>
     </div>
   );
