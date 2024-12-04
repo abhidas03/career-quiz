@@ -90,13 +90,31 @@ export default function Results(data) {
                     potentially learn more about yourself!
                 </p>
                 <br />
-                <div>
-                    {Object.keys(descriptionsJson['descriptions']).map(item => (
-                        <button key={item} onClick={() => setResult(item)}>
-                            {item !== result && item}
+                <div className="grid grid-cols-4 gap-4">
+                    {Object.keys(descriptionsJson['descriptions']).map((item) => (
+                        <button 
+                        key={item} 
+                        onClick={() => setResult(item)} 
+                        className={`px-4 py-2 rounded-lg ${
+                            item === result 
+                            ? "bg-gray-300 text-gray-700 cursor-not-allowed" 
+                            : "bg-blue-500 text-white hover:bg-blue-600"
+                        }`}
+                        disabled={item === result}
+                        >
+                        {item}
                         </button>
                     ))}
                 </div>
+                {/* <div className="grid grid-cols-4 gap-4">
+                    {Object.keys(descriptionsJson['descriptions'])
+                    .filter((item) => item !== result)
+                    .map(item => (
+                        <button key={item} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => setResult(item)}>
+                            {item}
+                        </button>
+                    ))}
+                </div> */}
 
               </div>
               
