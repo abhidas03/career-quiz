@@ -4,6 +4,8 @@ import { descriptionsJson } from './descriptions'
 
 export default function Results(data) {
     const [result, setResult] = useState("");
+    const [secondary, setSecondary] = useState("");
+
     if (data.data === null) {
         return <></>
     }
@@ -51,18 +53,28 @@ export default function Results(data) {
     
         const convertResults = (careerScores) => {
             let highestCategory = 'Artisan';
+            let highestScore = 0;
             for (let category in careerScores) {
                 if (careerScores[category] > careerScores[highestCategory]) {
                     highestCategory = category;
+                    highestScore = careerScores[category];
                 }
             }
-    
-            console.log(highestCategory)
-            return highestCategory;
+            let lowestDiff = 10;
+            let secondaryCategory = 'Pathfinder';
+            for (let category in careerScores) {
+                if (category !== highestCategory && highestScore - careerScores[category] < lowestDiff) {
+                    lowestDiff = highestScore - careerScores[category];
+                    secondaryCategory = category;
+                }
+            }
+            
+            return [highestCategory, secondaryCategory];
         }
     
-        const scores = dataToResults(data.data);
-        setResult(convertResults(scores));
+        const result = convertResults(dataToResults(data.data));
+        setResult(result[0]);
+        setSecondary(result[1])
     }
     
 
@@ -87,18 +99,22 @@ export default function Results(data) {
                 <p>
                     If this description doesn’t suit you, then feel free to take a look 
                     at the other personalities so that you can find a better match and 
-                    potentially learn more about yourself!
+                    potentially learn more about yourself. The highlighted category is 
+                    the second best match based on the quiz!
                 </p>
                 <br />
                 <div className="grid grid-cols-4 gap-4">
                     {Object.keys(descriptionsJson['descriptions']).map((item) => (
+                        
                         <button 
                         key={item} 
                         onClick={() => setResult(item)} 
                         className={`px-4 py-2 rounded-lg ${
                             item === result 
                             ? "bg-gray-300 text-gray-700 cursor-not-allowed" 
-                            : "bg-blue-500 text-white hover:bg-blue-600"
+                            : item === secondary
+                            ? "bg-yellow-300 text-gray-800"
+                            : "bg-purple-500 text-white hover:bg-blue-600"
                         }`}
                         disabled={item === result}
                         >
@@ -106,15 +122,7 @@ export default function Results(data) {
                         </button>
                     ))}
                 </div>
-                {/* <div className="grid grid-cols-4 gap-4">
-                    {Object.keys(descriptionsJson['descriptions'])
-                    .filter((item) => item !== result)
-                    .map(item => (
-                        <button key={item} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => setResult(item)}>
-                            {item}
-                        </button>
-                    ))}
-                </div> */}
+
 
               </div>
               
