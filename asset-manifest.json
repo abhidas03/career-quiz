@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.440bd606.css",
-    "main.js": "/react-gh-pages/static/js/main.654d6f7c.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.440bd606.css.map": "/react-gh-pages/static/css/main.440bd606.css.map",
-    "main.654d6f7c.js.map": "/react-gh-pages/static/js/main.654d6f7c.js.map"
+    "main.css": "/career-quiz/static/css/main.440bd606.css",
+    "main.js": "/career-quiz/static/js/main.654d6f7c.js",
+    "index.html": "/career-quiz/index.html",
+    "main.440bd606.css.map": "/career-quiz/static/css/main.440bd606.css.map",
+    "main.654d6f7c.js.map": "/career-quiz/static/js/main.654d6f7c.js.map"
   },
   "entrypoints": [
     "static/css/main.440bd606.css",
